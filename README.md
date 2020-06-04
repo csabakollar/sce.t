@@ -15,6 +15,8 @@ After that, make sure you have the following apps installed:
 - envconsul
 - vault
 
+Finally just execute `run_me.sh`
+
 ## Description
 
 This demo is a mixture of using curl, vault cli and python with requests library to communicate with Vault.
