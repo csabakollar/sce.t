@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  consul:
+    image: consul:1.7.3
+    hostname: consul
+    command: agent -dev -client 0.0.0.0
+    ports:
+      - "8500:8500"
+    networks:
+      - net
+    labels:
+      - scetestapp
+
+  vault:
+    depends_on:
+      - consul
+    image: vault:1.4.2
+    hostname: vault
+    environment:
+      VAULT_ADDR: http://127.0.0.1:8200
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./vault/config.hcl:/config.hcl
+    entrypoint: vault server -config=/config.hcl
+    networks:
+      - net
+    labels:
+      - scetestapp
+
+  db:
+    image: mysql:5.7
+    hostname: db
+    environment:
+      MYSQL_ROOT_PASSWORD: pw123
+    ports:
+      - "3306:3306"
+    networks:
+      - net
+    labels:
+      - scetestapp
+
+networks:
+  net:

@@ -1,0 +1,3 @@
+{
+    "policy": "path \"database/creds/mysql-ro-role\" {\n    capabilities = [\"read\"]\n}\n path \"secret/free4all/*\" {\n    capabilities = [ \"read\", \"create\", \"update\", \"delete\", \"list\" ]\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+    "plugin_name": "mysql-database-plugin",
+    "allowed_roles": "mysql-ro-role",
+    "connection_url": "{{username}}:{{password}}@tcp(db:3306)/",
+    "max_open_connections": 5,
+    "max_connection_lifetime": "5s",
+    "username": "root",
+    "password": "pw123"
+}

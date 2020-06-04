@@ -1,0 +1,8 @@
+{
+    "policies": ["mysql-ro-only"],
+    "meta": {
+        "purpose": "mysql-ro"
+    },
+    "ttl": "1h",
+    "renewable": true
+}
